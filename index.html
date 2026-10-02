@@ -6,348 +6,466 @@
 
 <title>Garage Tested | Used Car Buyer Inspections</title>
 
-<meta name="description" content="Garage Tested Used Car Buyer Inspections serving Virginia Beach and surrounding Hampton Roads. Know what you're buying before you buy it.">
+<meta name="description" content="Garage Tested Used Car Buyer Inspections serving Virginia Beach and Hampton Roads. Know what you're buying before you buy it.">
 
 <style>
-
-* {
-    box-sizing: border-box;
+:root{
+    --orange:#ff6500;
+    --orange2:#ff9500;
+    --black:#050505;
+    --card:#151515;
+    --border:#303030;
+    --text:#ffffff;
+    --muted:#b5b5b5;
 }
 
-html {
-    scroll-behavior: smooth;
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+    margin:0;
+    background:#050505;
+    color:var(--text);
+    font-family:Arial,Helvetica,sans-serif;
+    line-height:1.5;
 }
 
-body {
-    margin: 0;
-    background: #050505;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
+button,input,select,textarea{
+    font:inherit;
 }
 
 /* HEADER */
 
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(5,5,5,.96);
-    border-bottom: 3px solid #ff6200;
-    padding: 12px 18px;
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(4,4,4,.97);
+    border-bottom:3px solid var(--orange);
 }
 
-.header-inner {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.header-inner{
+    max-width:1250px;
+    margin:auto;
+    padding:12px 18px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
 }
 
-.brand {
-    font-size: 25px;
-    font-weight: 900;
+.brand{
+    font-size:26px;
+    font-weight:900;
+    letter-spacing:1px;
+    white-space:nowrap;
 }
 
-.brand span {
-    color: #ff6200;
+.brand span{color:var(--orange)}
+
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:3px;
 }
 
-nav {
-    display: flex;
-    gap: 5px;
+nav button{
+    background:transparent;
+    border:0;
+    color:#eee;
+    padding:9px;
+    font-size:12px;
+    font-weight:800;
+    cursor:pointer;
 }
 
-nav button {
-    background: none;
-    border: none;
-    color: white;
-    font-weight: bold;
-    padding: 10px;
-    cursor: pointer;
+nav button:hover{color:var(--orange)}
+
+/* HERO GRAPHIC */
+
+.hero{
+    background:#000;
+    border-bottom:4px solid var(--orange);
 }
 
-nav button:hover {
-    color: #ff6200;
+.hero img{
+    display:block;
+    width:100%;
+    max-width:1400px;
+    margin:auto;
 }
 
-/* MAIN GARAGE TESTED GRAPHIC */
+/* HERO CTA */
 
-.hero {
-    width: 100%;
-    background: #000;
+.hero-cta{
+    padding:55px 20px;
+    text-align:center;
+    background:
+      radial-gradient(circle at top,rgba(255,101,0,.22),transparent 55%),
+      #090909;
 }
 
-.hero img {
-    display: block;
-    width: 100%;
-    max-width: 1400px;
-    height: auto;
-    margin: auto;
+.hero-cta h1{
+    max-width:900px;
+    margin:0 auto;
+    font-size:clamp(38px,7vw,64px);
+    line-height:1.03;
+    font-weight:900;
+    text-transform:uppercase;
 }
 
-/* SECTION */
+.orange{color:var(--orange)}
 
-.section {
-    max-width: 1100px;
-    margin: auto;
-    padding: 70px 22px;
-    scroll-margin-top: 80px;
+.hero-cta p{
+    max-width:700px;
+    margin:20px auto 25px;
+    color:#ccc;
+    font-size:18px;
 }
 
-.title {
-    text-align: center;
-    margin-bottom: 40px;
+/* BUTTONS */
+
+.btn{
+    display:inline-block;
+    border:0;
+    border-radius:9px;
+    margin:6px;
+    padding:16px 24px;
+    background:linear-gradient(135deg,var(--orange),var(--orange2));
+    color:#111;
+    text-decoration:none;
+    font-weight:900;
+    cursor:pointer;
+    box-shadow:0 8px 25px rgba(255,101,0,.25);
 }
 
-.title h2 {
-    margin: 0;
-    font-size: clamp(34px, 6vw, 52px);
-    line-height: 1.05;
+.btn-dark{
+    background:#171717;
+    color:#fff;
+    border:1px solid #444;
+    box-shadow:none;
 }
 
-.title p {
-    color: #aaa;
-    max-width: 700px;
-    margin: 15px auto;
-    font-size: 17px;
+.btn-full{
+    width:100%;
+    margin:10px 0 0;
 }
 
-.orange {
-    color: #ff6200;
+/* SECTIONS */
+
+.section{
+    max-width:1100px;
+    margin:auto;
+    padding:70px 22px;
+    scroll-margin-top:90px;
 }
 
-/* CARDS */
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 16px;
+.section-title{
+    text-align:center;
+    margin-bottom:38px;
 }
 
-.card {
-    background: linear-gradient(145deg,#1b1b1b,#0d0d0d);
-    border: 1px solid #333;
-    border-radius: 12px;
-    padding: 26px;
-    position: relative;
-    overflow: hidden;
+.section-title h2{
+    margin:0;
+    font-size:clamp(33px,6vw,50px);
+    line-height:1.05;
+    text-transform:uppercase;
 }
 
-.card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 4px;
-    width: 100%;
-    background: #ff6200;
+.section-title p{
+    max-width:700px;
+    margin:14px auto 0;
+    color:var(--muted);
 }
 
-.icon {
-    font-size: 36px;
+/* CHECK CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:17px;
 }
 
-.card h3 {
-    color: #ff6200;
-    margin: 10px 0 5px;
+.card{
+    position:relative;
+    overflow:hidden;
+    padding:26px;
+    border:1px solid var(--border);
+    border-radius:14px;
+    background:linear-gradient(145deg,#1c1c1c,#0d0d0d);
 }
 
-.card p {
-    color: #bbb;
-    margin: 0;
+.card:before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:4px;
+    background:var(--orange);
+}
+
+.card .icon{font-size:36px}
+
+.card h3{
+    margin:10px 0 6px;
+    color:var(--orange);
+}
+
+.card p{
+    margin:0;
+    color:#bbb;
 }
 
 /* HOW IT WORKS */
 
-.dark {
-    background: #101010;
-    border-top: 1px solid #292929;
-    border-bottom: 1px solid #292929;
+.dark-section{
+    background:#101010;
+    border-top:1px solid #292929;
+    border-bottom:1px solid #292929;
 }
 
-.steps {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 25px;
+.steps{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
 }
 
-.step {
-    text-align: center;
+.step{
+    text-align:center;
+    padding:15px;
 }
 
-.number {
-    width: 62px;
-    height: 62px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #ff6200;
-    color: #111;
-    border-radius: 50%;
-    font-size: 26px;
-    font-weight: 900;
+.number{
+    width:62px;
+    height:62px;
+    margin:0 auto 15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:var(--orange);
+    color:#111;
+    font-size:26px;
+    font-weight:900;
 }
 
-.step h3 {
-    margin-bottom: 5px;
+.step p{color:#aaa}
+
+/* CONFIDENCE */
+
+.checklist{
+    max-width:800px;
+    margin:auto;
 }
 
-.step p {
-    color: #aaa;
+.check{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:16px 18px;
+    margin:10px 0;
+    border:1px solid var(--border);
+    border-radius:10px;
+    background:#151515;
 }
 
-/* CHECKLIST */
-
-.checklist {
-    max-width: 800px;
-    margin: auto;
+.tick{
+    color:var(--orange);
+    font-size:24px;
+    font-weight:900;
 }
 
-.check {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    background: #151515;
-    border: 1px solid #303030;
-    border-radius: 9px;
-    margin: 10px 0;
-    padding: 17px;
-}
+/* REQUEST FORM */
 
-.tick {
-    color: #ff6200;
-    font-size: 24px;
-    font-weight: 900;
-}
-
-/* CONTACT */
-
-.contact {
-    text-align: center;
-    padding: 80px 22px;
-    scroll-margin-top: 80px;
-
+.request-section{
+    padding:75px 20px;
     background:
-        radial-gradient(circle,rgba(255,98,0,.20),transparent 60%),
-        #090909;
+      radial-gradient(circle at top,rgba(255,101,0,.20),transparent 55%),
+      #080808;
+    scroll-margin-top:90px;
 }
 
-.contact h2 {
-    margin: 0;
-    font-size: clamp(36px,7vw,60px);
-    line-height: 1.05;
+.form-wrap{
+    max-width:800px;
+    margin:auto;
 }
 
-.contact p {
-    max-width: 650px;
-    margin: 20px auto;
-    color: #bbb;
-    font-size: 18px;
+.form-header{
+    text-align:center;
+    margin-bottom:30px;
 }
 
-/* BUTTON */
-
-.button {
-    display: inline-block;
-    border: none;
-    border-radius: 9px;
-    background: linear-gradient(135deg,#ff6200,#ff9900);
-    color: #111;
-    padding: 17px 28px;
-    font-size: 17px;
-    font-weight: 900;
-    cursor: pointer;
-    box-shadow: 0 8px 30px rgba(255,98,0,.30);
+.form-header h2{
+    margin:0;
+    font-size:clamp(35px,7vw,55px);
+    line-height:1.05;
 }
 
-/* FLOATING REQUEST BUTTON */
+.form-header p{
+    color:#bbb;
+    max-width:650px;
+    margin:15px auto;
+}
 
-.floating {
-    position: fixed;
-    right: 18px;
-    bottom: 18px;
-    z-index: 999;
+.form-card{
+    padding:28px;
+    background:rgba(20,20,20,.96);
+    border:1px solid #3a3a3a;
+    border-radius:16px;
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
 
-    border: none;
-    border-radius: 50px;
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
 
-    padding: 16px 22px;
+.field{
+    display:flex;
+    flex-direction:column;
+}
 
-    background: linear-gradient(135deg,#ff6200,#ff9900);
-    color: #111;
+.field.full{
+    grid-column:1 / -1;
+}
 
-    font-weight: 900;
-    cursor: pointer;
+label{
+    margin-bottom:6px;
+    font-size:13px;
+    font-weight:800;
+    color:#ddd;
+}
 
-    box-shadow: 0 8px 30px rgba(255,98,0,.45);
+.required{color:var(--orange)}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:14px;
+    border:1px solid #444;
+    border-radius:8px;
+    outline:none;
+    background:#090909;
+    color:#fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:var(--orange);
+    box-shadow:0 0 0 2px rgba(255,101,0,.15);
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.form-note{
+    margin-top:14px;
+    color:#888;
+    font-size:12px;
+    text-align:center;
+}
+
+.contact-buttons{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-top:14px;
+}
+
+.contact-buttons a{
+    text-align:center;
+}
+
+/* SERVICE */
+
+.service{
+    max-width:900px;
+    margin:auto;
+    padding:70px 22px;
+    text-align:center;
+}
+
+.service h2{
+    margin:0;
+    font-size:clamp(34px,6vw,50px);
+}
+
+.service p{
+    color:#aaa;
+    font-size:18px;
 }
 
 /* FOOTER */
 
-footer {
-    background: #030303;
-    border-top: 3px solid #ff6200;
-    text-align: center;
-    padding: 40px 20px;
+footer{
+    padding:40px 20px;
+    text-align:center;
+    background:#030303;
+    border-top:3px solid var(--orange);
 }
 
-.footer-logo {
-    font-size: 28px;
-    font-weight: 900;
+.footer-logo{
+    font-size:28px;
+    font-weight:900;
 }
 
-.footer-logo span {
-    color: #ff6200;
-}
+.footer-logo span{color:var(--orange)}
 
-footer p {
-    color: #777;
-    font-size: 13px;
+footer p{
+    color:#777;
+    font-size:13px;
 }
 
 /* MOBILE */
 
-@media(max-width: 760px) {
-
-    .header-inner {
-        display: block;
-        text-align: center;
+@media(max-width:800px){
+    .header-inner{
+        display:block;
+        text-align:center;
     }
 
-    nav {
-        justify-content: center;
-        margin-top: 5px;
-    }
+    nav{margin-top:5px}
 
-    nav button {
-        font-size: 11px;
-        padding: 7px;
+    nav button{
+        padding:6px;
+        font-size:10px;
     }
 
     .cards,
-    .steps {
-        grid-template-columns: 1fr;
+    .steps{
+        grid-template-columns:1fr;
     }
 
-    .floating {
-        left: 15px;
-        right: 15px;
-        width: calc(100% - 30px);
+    .form-grid{
+        grid-template-columns:1fr;
     }
 
+    .field.full{
+        grid-column:auto;
+    }
+
+    .contact-buttons{
+        grid-template-columns:1fr;
+    }
+
+    .form-card{
+        padding:20px;
+    }
 }
-
 </style>
 </head>
 
-
 <body>
 
-
 <header>
-
 <div class="header-inner">
 
 <div class="brand">
@@ -355,315 +473,334 @@ GARAGE <span>TESTED</span>
 </div>
 
 <nav>
-
-<button onclick="goToSection('home')">
-HOME
-</button>
-
-<button onclick="goToSection('checks')">
-WHAT WE CHECK
-</button>
-
-<button onclick="goToSection('how')">
-HOW IT WORKS
-</button>
-
-<button onclick="goToSection('contact')">
-CONTACT
-</button>
-
+<button type="button" onclick="goTo('home')">HOME</button>
+<button type="button" onclick="goTo('checks')">WHAT WE CHECK</button>
+<button type="button" onclick="goTo('how')">HOW IT WORKS</button>
+<button type="button" onclick="goTo('request')">REQUEST INSPECTION</button>
 </nav>
 
 </div>
-
 </header>
 
-
-<!-- MAIN GARAGE TESTED GRAPHIC -->
+<!-- GARAGE TESTED GRAPHIC -->
 
 <section class="hero" id="home">
-
 <img
 src="garage-test-site.png"
 alt="Garage Tested Used Car Buyer Inspections">
-
 </section>
 
+<!-- MAIN CTA -->
+
+<section class="hero-cta">
+
+<h1>
+DON'T BUY SOMEONE ELSE'S
+<span class="orange">PROBLEM.</span>
+</h1>
+
+<p>
+Before you hand over your money for a used vehicle,
+get a real opinion. Garage Tested helps identify potential
+problems before they become your repair bills.
+</p>
+
+<button class="btn" type="button" onclick="goTo('request')">
+REQUEST AN INSPECTION
+</button>
+
+<button class="btn btn-dark" type="button" onclick="goTo('checks')">
+SEE WHAT WE CHECK
+</button>
+
+</section>
 
 <!-- WHAT WE CHECK -->
 
 <section class="section" id="checks">
 
-<div class="title">
-
-<h2>
-WHAT WE
-<span class="orange">CHECK</span>
-</h2>
-
+<div class="section-title">
+<h2>WHAT WE <span class="orange">CHECK</span></h2>
 <p>
-A practical inspection focused on finding problems
-before they become your problems.
+A practical used-car inspection focused on the areas
+that could cost you serious money.
 </p>
-
 </div>
-
 
 <div class="cards">
 
-
 <div class="card">
-
 <div class="icon">🔧</div>
-
 <h3>ENGINE</h3>
-
-<p>
-Check for leaks, abnormal noises, visible problems
-and signs of neglected repairs.
-</p>
-
+<p>Leaks, abnormal noises, visible problems and signs of neglected repairs.</p>
 </div>
 
-
 <div class="card">
-
 <div class="icon">⚙️</div>
-
 <h3>TRANSMISSION</h3>
-
-<p>
-Check operation and look for signs of possible
-transmission or drivetrain problems.
-</p>
-
+<p>Operation and signs of possible transmission or drivetrain problems.</p>
 </div>
 
-
 <div class="card">
-
 <div class="icon">🛑</div>
-
 <h3>BRAKES</h3>
-
-<p>
-Inspect visible brake condition and identify
-obvious wear or concerns.
-</p>
-
+<p>Visible brake condition, wear and obvious concerns.</p>
 </div>
 
-
 <div class="card">
-
 <div class="icon">🚗</div>
-
 <h3>SUSPENSION</h3>
-
-<p>
-Check steering and suspension components
-for visible wear or damage.
-</p>
-
+<p>Steering and suspension components for visible wear or damage.</p>
 </div>
 
-
 <div class="card">
-
 <div class="icon">⚡</div>
-
 <h3>ELECTRICAL</h3>
-
-<p>
-Check warning lights, electrical equipment
-and obvious electrical problems.
-</p>
-
+<p>Warning lights, electrical equipment and obvious electrical problems.</p>
 </div>
-
 
 <div class="card">
-
 <div class="icon">🔍</div>
-
 <h3>HIDDEN ISSUES</h3>
-
-<p>
-Look for leaks, previous damage,
-neglected maintenance and other warning signs.
-</p>
-
+<p>Previous damage, leaks, neglected maintenance and other warning signs.</p>
 </div>
 
-
 </div>
-
 </section>
-
 
 <!-- HOW IT WORKS -->
 
-<section class="dark" id="how">
+<section class="dark-section" id="how">
 
 <div class="section">
 
-<div class="title">
-
-<h2>
-HOW IT
-<span class="orange">WORKS</span>
-</h2>
-
+<div class="section-title">
+<h2>HOW IT <span class="orange">WORKS</span></h2>
 </div>
-
 
 <div class="steps">
 
-
 <div class="step">
-
 <div class="number">1</div>
-
 <h3>FIND THE VEHICLE</h3>
-
-<p>
-Find the used vehicle you're considering buying.
-</p>
-
+<p>Find the used vehicle you're considering buying.</p>
 </div>
 
-
 <div class="step">
-
 <div class="number">2</div>
-
-<h3>WE INSPECT IT</h3>
-
-<p>
-Garage Tested looks it over for potential
-problems and warning signs.
-</p>
-
+<h3>REQUEST AN INSPECTION</h3>
+<p>Send us the vehicle information and where it's located.</p>
 </div>
-
 
 <div class="step">
-
 <div class="number">3</div>
-
-<h3>MAKE YOUR DECISION</h3>
-
-<p>
-Use the inspection information to make a
-more informed buying decision.
-</p>
-
-</div>
-
-
+<h3>BUY WITH MORE INFORMATION</h3>
+<p>Use what you learn from the inspection to make your buying decision.</p>
 </div>
 
 </div>
-
+</div>
 </section>
 
-
-<!-- BUY WITH CONFIDENCE -->
+<!-- WHY -->
 
 <section class="section">
 
-<div class="title">
-
-<h2>
-BUY WITH
-<span class="orange">CONFIDENCE</span>
-</h2>
-
-<p>
-Know what you're buying before you make the deal.
-</p>
-
+<div class="section-title">
+<h2>BUY WITH <span class="orange">CONFIDENCE</span></h2>
 </div>
-
 
 <div class="checklist">
 
-<div class="check">
-<span class="tick">✓</span>
-Facebook Marketplace vehicles
-</div>
-
-<div class="check">
-<span class="tick">✓</span>
-Private-party used vehicles
-</div>
-
-<div class="check">
-<span class="tick">✓</span>
-Used-car dealership vehicles
-</div>
-
-<div class="check">
-<span class="tick">✓</span>
-Identify potential expensive repairs
-</div>
-
-<div class="check">
-<span class="tick">✓</span>
-Get an independent opinion before making the deal
-</div>
-
-<div class="check">
-<span class="tick">✓</span>
-Avoid buying someone else's problem
-</div>
+<div class="check"><span class="tick">✓</span> Facebook Marketplace vehicles</div>
+<div class="check"><span class="tick">✓</span> Private-party used vehicles</div>
+<div class="check"><span class="tick">✓</span> Used-car dealership vehicles</div>
+<div class="check"><span class="tick">✓</span> Identify potential expensive repairs</div>
+<div class="check"><span class="tick">✓</span> Independent opinion before making the deal</div>
+<div class="check"><span class="tick">✓</span> Know what you're buying before you buy it</div>
 
 </div>
-
 </section>
 
+<!-- ACTUAL REQUEST FORM -->
 
-<!-- CONTACT -->
+<section class="request-section" id="request">
 
-<section class="contact" id="contact">
+<div class="form-wrap">
+
+<div class="form-header">
 
 <h2>
-
-READY TO GET IT
-
-<br>
-
-<span class="orange">
-GARAGE TESTED?
-</span>
-
+REQUEST AN
+<span class="orange">INSPECTION</span>
 </h2>
 
-
 <p>
-
-Serving Virginia Beach and surrounding
-Hampton Roads areas.
-
-<br><br>
-
-Have the vehicle's year, make, model
-and location ready.
-
+Fill out the vehicle information below.
+When you tap Send Request, your phone will open a text
+to Garage Tested with the information already filled in.
 </p>
 
+</div>
 
-<button
-class="button"
-onclick="requestInspection()">
+<div class="form-card">
 
-REQUEST AN INSPECTION
+<form id="inspectionForm" onsubmit="sendRequest(event)">
 
+<div class="form-grid">
+
+<div class="field">
+<label>
+YOUR NAME <span class="required">*</span>
+</label>
+<input
+id="customerName"
+type="text"
+placeholder="Your name"
+required>
+</div>
+
+<div class="field">
+<label>
+YOUR PHONE <span class="required">*</span>
+</label>
+<input
+id="customerPhone"
+type="tel"
+placeholder="Your phone number"
+required>
+</div>
+
+<div class="field">
+<label>
+VEHICLE YEAR <span class="required">*</span>
+</label>
+<input
+id="vehicleYear"
+type="text"
+inputmode="numeric"
+placeholder="Example: 2018"
+required>
+</div>
+
+<div class="field">
+<label>
+MAKE <span class="required">*</span>
+</label>
+<input
+id="vehicleMake"
+type="text"
+placeholder="Example: Toyota"
+required>
+</div>
+
+<div class="field">
+<label>
+MODEL <span class="required">*</span>
+</label>
+<input
+id="vehicleModel"
+type="text"
+placeholder="Example: Camry"
+required>
+</div>
+
+<div class="field">
+<label>MILEAGE</label>
+<input
+id="mileage"
+type="text"
+inputmode="numeric"
+placeholder="Example: 85,000">
+</div>
+
+<div class="field">
+<label>ASKING PRICE</label>
+<input
+id="price"
+type="text"
+placeholder="Example: $12,500">
+</div>
+
+<div class="field">
+<label>SELLER TYPE</label>
+<select id="sellerType">
+<option value="">Select seller type</option>
+<option>Facebook Marketplace</option>
+<option>Private Seller</option>
+<option>Dealership</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="field full">
+<label>
+VEHICLE LOCATION <span class="required">*</span>
+</label>
+<input
+id="vehicleLocation"
+type="text"
+placeholder="City, dealership or meeting location"
+required>
+</div>
+
+<div class="field full">
+<label>LISTING LINK</label>
+<input
+id="listingLink"
+type="url"
+placeholder="Paste the Facebook Marketplace or dealer listing link">
+</div>
+
+<div class="field full">
+<label>QUESTIONS / CONCERNS</label>
+<textarea
+id="notes"
+placeholder="Anything you already know about the vehicle or want checked?"></textarea>
+</div>
+
+</div>
+
+<button class="btn btn-full" type="submit">
+SEND INSPECTION REQUEST BY TEXT
 </button>
 
+</form>
 
+<div class="contact-buttons">
+
+<a class="btn btn-dark" href="sms:7573551929">
+TEXT GARAGE TESTED
+</a>
+
+<a class="btn btn-dark" href="tel:7573551929">
+CALL GARAGE TESTED
+</a>
+
+</div>
+
+<div class="form-note">
+Garage Tested • 757-355-1929 • Virginia Beach / Hampton Roads
+</div>
+
+</div>
+</div>
 </section>
 
+<!-- SERVICE AREA -->
+
+<section class="service">
+
+<h2>
+SERVING <span class="orange">HAMPTON ROADS</span>
+</h2>
+
+<p>
+Garage Tested Used Car Buyer Inspections serves
+Virginia Beach and surrounding Hampton Roads areas.
+</p>
+
+</section>
 
 <footer>
 
@@ -671,65 +808,96 @@ REQUEST AN INSPECTION
 GARAGE <span>TESTED</span>
 </div>
 
-<p>
-REAL CARS • REAL FIXES • REAL ADVICE
-</p>
+<p>REAL CARS • REAL FIXES • REAL ADVICE</p>
 
-<p>
-USED CAR BUYER INSPECTIONS • VIRGINIA BEACH, VA
-</p>
+<p>USED CAR BUYER INSPECTIONS • VIRGINIA BEACH, VA</p>
 
-<p>
-Know what you're buying before you buy it.
-</p>
+<p>757-355-1929</p>
 
 </footer>
 
-
-<button
-class="floating"
-onclick="requestInspection()">
-
-REQUEST AN INSPECTION
-
-</button>
-
-
 <script>
 
-function goToSection(id) {
+function goTo(id){
+    const target = document.getElementById(id);
 
-    const section = document.getElementById(id);
-
-    if(section) {
-
-        section.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
+    if(target){
+        target.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
         });
-
     }
 }
 
+function value(id){
+    return document.getElementById(id).value.trim();
+}
 
-function requestInspection() {
+function sendRequest(event){
 
-    const section =
-    document.getElementById("contact");
+    event.preventDefault();
 
-    if(section) {
+    const form = document.getElementById("inspectionForm");
 
-        section.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-
+    if(!form.checkValidity()){
+        form.reportValidity();
+        return;
     }
 
+    const message =
+`GARAGE TESTED - INSPECTION REQUEST
+
+CUSTOMER
+Name: ${value("customerName")}
+Phone: ${value("customerPhone")}
+
+VEHICLE
+Year: ${value("vehicleYear")}
+Make: ${value("vehicleMake")}
+Model: ${value("vehicleModel")}
+Mileage: ${value("mileage") || "Not provided"}
+Asking Price: ${value("price") || "Not provided"}
+
+SELLER
+Type: ${value("sellerType") || "Not provided"}
+
+VEHICLE LOCATION
+${value("vehicleLocation")}
+
+LISTING
+${value("listingLink") || "No listing link provided"}
+
+QUESTIONS / CONCERNS
+${value("notes") || "None provided"}`;
+
+    const encodedMessage = encodeURIComponent(message);
+
+    /*
+       Android generally accepts ?body=
+       after the SMS number.
+       iOS commonly accepts &body=.
+       This detects iPhone/iPad and uses the appropriate form.
+    */
+
+    const isiOS =
+        /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+    let smsURL;
+
+    if(isiOS){
+        smsURL =
+        "sms:7573551929&body=" +
+        encodedMessage;
+    }else{
+        smsURL =
+        "sms:7573551929?body=" +
+        encodedMessage;
+    }
+
+    window.location.href = smsURL;
 }
 
 </script>
-
 
 </body>
 </html>
